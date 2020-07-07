@@ -28,6 +28,11 @@ public class LoanApplicationExample {
 		return new Customer(102,"Ramesh");
 	}
 	
+	@Bean
+	public Customer suresh() {
+		
+		return new Customer(103,"Suresh");
+	}
 	// Using Setter DI with Factory Method
 
 	@Bean

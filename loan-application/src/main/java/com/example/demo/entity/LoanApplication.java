@@ -1,6 +1,7 @@
 package com.example.demo.entity;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 import lombok.AccessLevel;
 import lombok.Data;
@@ -16,7 +17,8 @@ public class LoanApplication {
 	
 	// Using Field DI on Property
 
-	@Autowired
+	@Autowired(required = false)
+	@Qualifier(value = "suresh")
 	Customer customer;
 	
 	double loanAmount;
