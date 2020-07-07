@@ -18,7 +18,7 @@ public class LoanApplication {
 	// Using Field DI on Property
 
 	@Autowired(required = false)
-	@Qualifier(value = "suresh")
+	@Qualifier(value = "ramesh")
 	Customer customer;
 	
 	double loanAmount;

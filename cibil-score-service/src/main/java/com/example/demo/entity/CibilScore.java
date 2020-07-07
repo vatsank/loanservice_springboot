@@ -1,10 +1,17 @@
 package com.example.demo.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 import org.springframework.stereotype.Component;
 
 @Component
+@Entity()
+@Table(name = "scb_cibilscores")
 public class CibilScore {
 
+	@Id
 	private int id;
 	private String panNumber;
 	private String firstName;

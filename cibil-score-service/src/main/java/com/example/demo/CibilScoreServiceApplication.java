@@ -2,7 +2,9 @@ package com.example.demo;
 
 import java.util.Arrays;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -10,6 +12,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Scope;
 
 import com.example.demo.entity.CibilScore;
+import com.example.demo.ifaces.CibilScoreRepository;
 
 
 @SpringBootApplication
@@ -32,24 +35,24 @@ public class CibilScoreServiceApplication {
 //	  System.out.println(defaScore);
 	  
 		
-		CibilScore sureshScore = ctx.getBean("suresh",CibilScore.class);
-		  
-		  System.out.println(sureshScore);
-		  
-		  System.out.println("is Singleton"+ctx.isSingleton("suresh"));
-		  
-		  System.out.println("is Prototype"+ctx.isPrototype("suresh"));
-		  
-		  
-      CibilScore sureshScore2 = ctx.getBean("suresh",CibilScore.class);
-		  
-		  System.out.println(sureshScore2);
-		  
-		  System.out.println("Hash code of Suresh -1 "+ sureshScore.hashCode());
-		  
-		  System.out.println("Hash code of Suresh -2 "+ sureshScore2.hashCode());
-		  
-	   ctx.close();
+//		CibilScore sureshScore = ctx.getBean("suresh",CibilScore.class);
+//		  
+//		  System.out.println(sureshScore);
+//		  
+//		  System.out.println("is Singleton"+ctx.isSingleton("suresh"));
+//		  
+//		  System.out.println("is Prototype"+ctx.isPrototype("suresh"));
+//		  
+//		  
+//      CibilScore sureshScore2 = ctx.getBean("suresh",CibilScore.class);
+//		  
+//		  System.out.println(sureshScore2);
+//		  
+//		  System.out.println("Hash code of Suresh -1 "+ sureshScore.hashCode());
+//		  
+//		  System.out.println("Hash code of Suresh -2 "+ sureshScore2.hashCode());
+//		  
+//	   ctx.close();
 	
 	}
 
@@ -83,5 +86,24 @@ public class CibilScoreServiceApplication {
 		 
 		 
 		 return sureshScore;
+	}
+	
+	@Bean
+	public CommandLineRunner runner() {
+		
+		
+		return new CommandLineRunner() {
+
+			@Autowired
+			CibilScoreRepository repo;
+
+			@Override
+			public void run(String... args) throws Exception {
+				
+			  repo.save(new CibilScore(1010, "AAXPAB449S", "Ramesh", "kumar", "chennai", 755));
+				
+			}
+		};
+		
 	}
 }
