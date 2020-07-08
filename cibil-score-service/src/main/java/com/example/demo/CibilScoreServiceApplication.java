@@ -1,6 +1,5 @@
 package com.example.demo;
 
-import java.util.Arrays;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
@@ -22,7 +21,7 @@ public class CibilScoreServiceApplication {
 	
 		ConfigurableApplicationContext ctx=	SpringApplication.run(CibilScoreServiceApplication.class, args);
 	
-
+	
 		
 //	  CibilScore rameshScore = ctx.getBean("ramesh",CibilScore.class);
 //	  

@@ -7,7 +7,7 @@ import javax.persistence.Table;
 import org.springframework.stereotype.Component;
 
 @Component
-@Entity()
+@Entity
 @Table(name = "scb_cibilscores")
 public class CibilScore {
 
