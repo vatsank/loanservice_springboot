@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.entity.CibilScore;
-import com.example.demo.ifaces.CibilScoreRepository;
 import com.example.demo.services.CibilScoreService;
 
 
