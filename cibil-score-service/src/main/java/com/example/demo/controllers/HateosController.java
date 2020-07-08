@@ -13,12 +13,16 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.entity.CibilScore;
 import com.example.demo.services.CibilScoreService;
+import com.example.demo.utils.LoanDetailService;
 
 @RestController
 public class HateosController {
 
 	@Autowired
 	private CibilScoreService service;
+	
+	@Autowired
+	private LoanDetailService detail;
 	
 	@GetMapping(path = "/api/v2/cibilscores")
 	public CollectionModel<CibilScore> findAll(){
@@ -41,13 +45,13 @@ public class HateosController {
 	}
 	
 	@GetMapping(path = "/api/v2/cibilscores/{id}")
-	public EntityModel<CibilScore> findById(@PathVariable("id") int id){
+	public EntityModel<String> findById(@PathVariable("id") int id){
 		
 		CibilScore score = this.service.findById(id);
 		
-		Link link = WebMvcLinkBuilder.linkTo(HateosController.class).withSelfRel();
+		//Link link = WebMvcLinkBuilder.linkTo(HateosController.class).withSelfRel();
 
-		EntityModel<CibilScore> model = EntityModel.of(score,link);
+		EntityModel<String> model = EntityModel.of(detail.loanDetails());
 		
 		return model;
 	}
