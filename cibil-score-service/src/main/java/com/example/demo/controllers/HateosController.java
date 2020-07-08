@@ -19,13 +19,14 @@ public class HateosController {
 	@GetMapping(path = "/api/v2/cibilscores")
 	public List<CibilScore> findAll(){
 		
-		return this.service.findAll();
+		List<CibilScore> scores= this.service.findAll();
+		
 	}
 	
 	@GetMapping(path = "/api/v2/cibilscores/{id}")
-	public List<CibilScore> findById(@PathVariable("id") int id){
+	public CibilScore findById(@PathVariable("id") int id){
 		
-		return this.service.findAll();
+		return this.service.findById(id);
 	}
 	
 }

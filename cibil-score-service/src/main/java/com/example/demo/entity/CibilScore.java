@@ -4,12 +4,13 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.hateoas.RepresentationModel;
 import org.springframework.stereotype.Component;
 
 @Component
 @Entity
 @Table(name = "scb_cibilscores")
-public class CibilScore {
+public class CibilScore extends RepresentationModel<CibilScore>{
 
 	@Id
 	private int id;

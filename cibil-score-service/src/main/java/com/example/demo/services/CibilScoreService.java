@@ -25,4 +25,10 @@ public class CibilScoreService {
 		
 		return this.repo.save(entity);
 	}
+	
+      public CibilScore findById(int id) {
+		
+		return this.repo.findById(id).get();
+	}
+      
 }

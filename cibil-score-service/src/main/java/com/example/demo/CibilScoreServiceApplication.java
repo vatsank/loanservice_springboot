@@ -9,12 +9,15 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Scope;
+import org.springframework.hateoas.config.EnableHypermediaSupport;
+import org.springframework.hateoas.config.EnableHypermediaSupport.HypermediaType;
 
 import com.example.demo.entity.CibilScore;
 import com.example.demo.ifaces.CibilScoreRepository;
 
 
 @SpringBootApplication
+@EnableHypermediaSupport(type = HypermediaType.HAL)
 public class CibilScoreServiceApplication {
 
 	public static void main(String[] args) {
