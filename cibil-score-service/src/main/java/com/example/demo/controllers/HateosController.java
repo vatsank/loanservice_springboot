@@ -38,7 +38,7 @@ public class HateosController {
 			eachScore.add(link);
 		}
 		
-		Link link = WebMvcLinkBuilder.linkTo(HateosController.class).withSelfRel();
+		Link link = WebMvcLinkBuilder.linkTo(HateosController.class).slash("api/v1/cibilscores").withSelfRel();
 		CollectionModel<CibilScore> model = CollectionModel.of(scores, link);
 		
 		return model;
@@ -49,7 +49,9 @@ public class HateosController {
 		
 		CibilScore score = this.service.findById(id);
 		
-		//Link link = WebMvcLinkBuilder.linkTo(HateosController.class).withSelfRel();
+		//Link link = WebMvcLinkBuilder
+		              //.linkTo(HateosController.class)
+		              //.withSelfRel();
 
 		EntityModel<String> model = EntityModel.of(detail.loanDetails());
 		
