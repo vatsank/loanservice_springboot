@@ -5,30 +5,31 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.entity.CibilScore;
 import com.example.demo.ifaces.CibilScoreRepository;
+import com.example.demo.services.CibilScoreService;
 
-import io.swagger.v3.oas.annotations.parameters.RequestBody;
 
 @RestController
 public class CibilScoreController {
 
 	
 	@Autowired
-	private CibilScoreRepository repo;
+	private CibilScoreService service;
 	
 	@GetMapping(path = "/api/v1/cibilscores")
 	public List<CibilScore> findAll(){
 		
-		return this.repo.findAll();
+		return this.service.findAll();
 	}
 	
 	
 	@PostMapping(path = "/api/v1/cibilscores")
 	public CibilScore add(@RequestBody CibilScore entity) {
 		
-		return this.repo.save(entity);
+		return this.service.save(entity);
 	}
 }
