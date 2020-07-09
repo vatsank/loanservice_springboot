@@ -26,6 +26,7 @@ eureka:
 server:
   port: 2020
 
+
 --- 
 
 server:

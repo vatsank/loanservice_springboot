@@ -8,7 +8,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
+import lombok.extern.slf4j.Slf4j;
+
 @RestController
+@Slf4j
 public class LoadBalancedController {
 
 	@Autowired
@@ -19,9 +22,17 @@ public class LoadBalancedController {
 	@Autowired
 	private LoadBalancerClient loadBalancer;
 	
+	
+	public LoadBalancedController() {
+		super();
+	log.info("Load Balancer Initalized");
+	}
+
+
 	@GetMapping(path = "/api/v2/points")
 	public String fetchScores() {
 		
+		log.info("Fetch Scores Called");
 		ServiceInstance instance = loadBalancer.choose("cibile-score-service");
 		
 			String baseURI = instance.getUri().toString();

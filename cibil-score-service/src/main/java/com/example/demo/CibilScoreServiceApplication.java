@@ -27,7 +27,8 @@ public class CibilScoreServiceApplication {
 	
 		ConfigurableApplicationContext ctx=	SpringApplication.run(CibilScoreServiceApplication.class, args);
 	
-	
+		// spring-boot:run -Dspring-boot.run.profiles=pro1
+
 		
 //	  CibilScore rameshScore = ctx.getBean("ramesh",CibilScore.class);
 //	  
