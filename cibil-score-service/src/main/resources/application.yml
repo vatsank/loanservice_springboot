@@ -1,6 +1,6 @@
 
 server:
-  port: 2020
+  port: 2323
 
 
 spring:

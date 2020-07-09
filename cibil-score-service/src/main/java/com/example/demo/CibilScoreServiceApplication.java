@@ -105,7 +105,7 @@ public class CibilScoreServiceApplication {
 			@Override
 			public void run(String... args) throws Exception {
 				
-			  repo.save(new CibilScore(1010, "AAXPAB449S", "Ramesh", "kumar", "chennai", 755));
+			  repo.save(new CibilScore(1312, "AAXPAB449S", "Ramesh", "kumar", "chennai", 755));
 				
 			}
 		};

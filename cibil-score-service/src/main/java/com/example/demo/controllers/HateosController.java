@@ -24,7 +24,7 @@ public class HateosController {
 	@Autowired
 	private LoanDetailService detail;
 	
-	@GetMapping(path = "/api/v2/cibilscores")
+	@GetMapping(path = "/api/v2/cibilscores",produces = "application/hal+json")
 	public CollectionModel<CibilScore> findAll(){
 		
 		List<CibilScore> scores= this.service.findAll();

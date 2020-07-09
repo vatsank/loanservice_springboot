@@ -5,10 +5,14 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.demo.controllers.CibilScoreController;
 import com.example.demo.entity.CibilScore;
 import com.example.demo.ifaces.CibilScoreRepository;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Service
+@Slf4j
 public class CibilScoreService {
 
 	
@@ -17,12 +21,14 @@ public class CibilScoreService {
 	
 	
 	public List<CibilScore> findAll(){
-		
+
+		log.info("Find  All in service called");
 		return this.repo.findAll();
 	}
 	
 	public CibilScore save(CibilScore entity) {
 		
+		log.info("save in service called");
 		return this.repo.save(entity);
 	}
 	
