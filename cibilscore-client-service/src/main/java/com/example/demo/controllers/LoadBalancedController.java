@@ -19,13 +19,17 @@ public class LoadBalancedController {
 	@Autowired
 	private LoadBalancerClient loadBalancer;
 	
-	@GetMapping(path = "/api/v2/points",produces = "application/hal+json")
+	@GetMapping(path = "/api/v2/points")
 	public String fetchScores() {
 		
-		ServiceInstance instance = loadBalancer.choose("cibile-score-service")
+		ServiceInstance instance = loadBalancer.choose("cibile-score-service");
 		
 			String baseURI = instance.getUri().toString();
-		return template.getForObject(baseURI+"/api/v2/cibilscores",String.class);
+		//return template.getForObject(baseURI+"/api/v2/cibilscores",String.class);
+		
+		String resp=template.getForObject(baseURI+"/api/v2/cibilscores",String.class)+ baseURI;
+			
+		return resp;
 		
 	}
 }
