@@ -21,4 +21,13 @@ public class CibilscoreClientServiceApplication {
 		
 		return new RestTemplate();
 	}
+	
+	@Bean(name = "wlb")
+	public RestTemplate rest() {
+	
+		
+		return new RestTemplate();
+	}
+	
+	
 }
