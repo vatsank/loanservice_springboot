@@ -7,12 +7,14 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Scope;
 import org.springframework.hateoas.config.EnableHypermediaSupport;
 import org.springframework.hateoas.config.EnableHypermediaSupport.HypermediaType;
+import org.springframework.web.client.RestTemplate;
 
 import com.example.demo.entity.CibilScore;
 import com.example.demo.ifaces.CibilScoreRepository;
@@ -77,22 +79,16 @@ public class CibilScoreServiceApplication {
 	
 		// Setter  Dependency Injection is used
 
+	
 	@Bean
-	@Scope(scopeName = ConfigurableBeanFactory.SCOPE_PROTOTYPE)
-	public CibilScore suresh() {
+	@LoadBalanced
+	
+	public RestTemplate template() {
 		
-		CibilScore sureshScore = new CibilScore();
-		
-		 sureshScore.setId(2020);
-		 sureshScore.setFirstName("Suresh");
-		 sureshScore.setLastName("Reddy");
-		 sureshScore.setLocation("Hyderabad");
-		 sureshScore.setPanNumber("AAXXS45");
-		 sureshScore.setScore(732);
-		 
-		 
-		 return sureshScore;
+		return new RestTemplate();
 	}
+	
+	
 	
 	@Bean
 	public CommandLineRunner runner() {

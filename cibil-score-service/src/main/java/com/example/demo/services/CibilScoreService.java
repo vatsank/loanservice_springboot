@@ -37,4 +37,10 @@ public class CibilScoreService {
 		return this.repo.findById(id).get();
 	}
       
+      public CibilScore findByPan(String panNumber) {
+  		
+  		return this.repo.findByPan(panNumber);
+  		
+  		
+  	}
 }
