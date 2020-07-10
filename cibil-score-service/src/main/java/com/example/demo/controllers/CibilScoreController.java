@@ -69,7 +69,7 @@ public class CibilScoreController {
 		
 		
 		
-		TaxPayerDTO dto=this.template.getForObject("http://taxpayer-service/api/v1/taxpayers/{pan}"+pan, TaxPayerDTO.class);
+		TaxPayerDTO dto=this.template.getForObject("http://taxpayer-service/api/v1/taxpayers/"+pan, TaxPayerDTO.class);
 	
 		System.out.println(dto);
 		

@@ -1,6 +1,6 @@
 
 server:
-  port: 3232
+  port: 3838
 
 
 spring:
@@ -17,7 +17,7 @@ spring:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
  
   application:
-    name: cibil-score-service
+    name: loan-application-service
   boot:
     admin:
       client:

@@ -1,5 +1,9 @@
 package com.example.demo.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -10,10 +14,13 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
+@Entity
+@Table(name = "scb_loanApplication")
+public class LoanApplication {
 
-public class Response {
-
-	CibilScore score;
-	TaxPayerDTO tax;
-	
+	@Id
+	long loanNumber;
+	String firstName;
+	double loanAmount;
+	String panNumber;
 }
