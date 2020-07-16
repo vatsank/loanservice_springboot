@@ -1,8 +1,7 @@
 
 server:
   port: 3232
-  servlet:
-    context-path: /api/v1
+
 
 spring:
   datasource:
@@ -25,7 +24,7 @@ logging:
     org.hibernate.sql:  debug
     org.hibernate.type.descriptor.sql.BasicBinder: trace 
     
-
+    
 management:
   endpoints:
     web:
