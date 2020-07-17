@@ -43,14 +43,14 @@ public class ItemController {
 	      
 	       for (Item eachItem : allItems) {
 	           int id = eachItem.getItemNumber();
-	           Link selfLink = WebMvcLinkBuilder.linkTo(InvoiceController.class)
+	           Link selfLink = WebMvcLinkBuilder.linkTo(HateosInvoiceController.class)
 	                  .slash("api/v1/items/"+id).withSelfRel();
 	        
 	       eachItem.add(selfLink);
 	       
 	         }
 	       
-	Link link = WebMvcLinkBuilder.linkTo(InvoiceController.class)
+	Link link = WebMvcLinkBuilder.linkTo(HateosInvoiceController.class)
 			 .withSelfRel();
 	       CollectionModel<Item> result =
 	    		    CollectionModel.of(allItems, link);

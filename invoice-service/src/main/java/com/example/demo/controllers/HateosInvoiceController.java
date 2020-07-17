@@ -45,7 +45,7 @@ public class HateosInvoiceController {
 		       
 		         }
 		       
-		Link link = WebMvcLinkBuilder.linkTo(InvoiceController.class)
+		Link link = WebMvcLinkBuilder.linkTo(HateosInvoiceController.class)
 				 .withSelfRel();
 		       CollectionModel<Item> result =
 		    		    CollectionModel.of(allItems, link);

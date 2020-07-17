@@ -45,6 +45,8 @@ public class InvoiceController {
 	public Invoice remove(@RequestBody Invoice entity,
 			       HttpServletResponse response) {
 
+	      
+	
 	try {
 	       Invoice deleted = this.service.remove(entity);
 	       if (deleted==null){
