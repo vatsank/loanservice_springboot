@@ -1,0 +1,12 @@
+{"properties": [
+  {
+    "name": "spring.kafka.producer.key-deserializer",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.kafka.producer.key-deserializer'"
+  },
+  {
+    "name": "spring.kafka.producer.value-deserializer",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.kafka.producer.value-deserializer'"
+  }
+]}
